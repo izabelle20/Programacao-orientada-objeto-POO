@@ -80,7 +80,7 @@ public class Gerenciamento {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\nSistema de Gerenciamento de Estoque de um mercado");
+            System.out.println("\nSistema de Gerenciamento de Estoque de um Mercado");
             System.out.println("1. Adicionar Produto");
             System.out.println("2. Remover Produto");
             System.out.println("3. Listar Produtos");
