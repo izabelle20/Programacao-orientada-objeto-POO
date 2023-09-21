@@ -16,29 +16,27 @@ Peça ao usuário para escolher a direção da conversão e, em seguida, faça a
 */
 public class Exercicio2 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);  // Cria um objeto Scanner para ler entrada do usuário
-
+        Scanner scanner = new Scanner(System.in);  
         System.out.println("Escolha a direção da conversão:");
         System.out.println("1. Celsius para Fahrenheit");
         System.out.println("2. Fahrenheit para Celsius");
-        int escolha = scanner.nextInt();  // Lê a escolha do usuário
+        int escolha = scanner.nextInt(); 
 
-        if (escolha == 1) {  // Se a escolha for 1, converter de Celsius para Fahrenheit
+        if (escolha == 1) { 
             System.out.print("Digite a temperatura em Celsius: ");
-            double celsius = scanner.nextDouble();  // Lê a temperatura em Celsius
+            double celsius = scanner.nextDouble(); 
 
-            double fahrenheit = (celsius * 9/5) + 32;  // Fórmula de conversão
+            double fahrenheit = (celsius * 9/5) + 32; 
             System.out.println("A temperatura em Fahrenheit é: " + fahrenheit);
-        } else if (escolha == 2) {  // Se a escolha for 2, converter de Fahrenheit para Celsius
+        } else if (escolha == 2) {  
             System.out.print("Digite a temperatura em Fahrenheit: ");
-            double fahrenheit = scanner.nextDouble();  // Lê a temperatura em Fahrenheit
-
-            double celsius = (fahrenheit - 32) * 5/9;  // Fórmula de conversão
+            double fahrenheit = scanner.nextDouble();  
+            double celsius = (fahrenheit - 32) * 5/9; 
             System.out.println("A temperatura em Celsius é: " + celsius);
         } else {
-            System.out.println("Escolha inválida!");  // Mensagem de erro se a escolha for inválida
+            System.out.println("Escolha inválida!");  
         }
 
-        scanner.close();  // Fecha o objeto Scanner para liberar recursos
+        scanner.close();  
     }
 }

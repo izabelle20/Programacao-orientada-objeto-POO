@@ -1,4 +1,6 @@
-package lista1.atividade2;  // Declaração do pacote
+package lista1.atividade2;
+
+import java.util.Scanner;
 
 /* 
 ------------------------------------------------------ Atividade 2 ----------------------------------------------------------------
@@ -12,37 +14,35 @@ Exercício 2: Conversor de Temperatura Crie um conversor de temperatura que perm
 Peça ao usuário para escolher a direção da conversão e, em seguida, faça a conversão e exiba o resultado.
 */
 
-import java.util.Scanner;
+public class Exercicio1 {  
 
-public class Exercicio1 {  // Declaração da classe
-
-    private Integer a;  // Declaração dos atributos
+    private Integer a;  
     private Integer b;
     private String operador;
 
-    public Integer getA() {  // Método getter para 'a'
+    public Integer getA() {  
         return this.a;
     }
 
-    public void setA(Integer a) {  // Método setter para 'a'
+    public void setA(Integer a) {  
         this.a = a;
     }
 
-    public Integer getB() {  // Método getter para 'b'
+    public Integer getB() {  
         return this.b;
     }
 
-    public void setB(Integer b) {  // Método setter para 'b'
+    public void setB(Integer b) {  
         this.b = b;
     }
 
-    public String getOperador() {  // Método getter para 'operador'
+    public String getOperador() {  
         return this.operador;
     }
 
-    public void setOperador(String op) throws Exception {  // Método setter para 'operador'
+    public void setOperador(String op) throws Exception {  
         Boolean err = true;
-        switch (op) {  // Verifica se o operador é válido
+        switch (op) {  
             case "+":
                 err = false;
                 break;
@@ -57,16 +57,16 @@ public class Exercicio1 {  // Declaração da classe
                 break;
         }
 
-        if (err) {  // Lança exceção se o operador for inválido
+        if (err) {  
             throw new Exception("Operador inválido");
         }
 
-        this.operador = op;  // Atribui o operador
+        this.operador = op;  
     }
 
-    public Integer operar() {  // Método para realizar a operação
+    public Integer operar() { 
         Integer ret = 0;
-        switch (this.operador) {  // Executa a operação conforme o operador
+        switch (this.operador) {  
             case "+":
                 ret = this.a + this.b;
                 break;
@@ -80,32 +80,32 @@ public class Exercicio1 {  // Declaração da classe
                 ret = this.a / this.b;
                 break;
         }
-        return ret;  // Retorna o resultado
+        return ret;  
     }
 
-    public static void main(String[] args) {  // Método main para iniciar o programa
+    public static void main(String[] args) {  
         try (Scanner scanner = new Scanner(System.in)) {
-            Exercicio1 calculadora = new Exercicio1();  // Criação de uma instância da classe
+            Exercicio1 calculadora = new Exercicio1(); 
 
             System.out.print("Digite o primeiro número: ");
             int numero1 = scanner.nextInt();
-            calculadora.setA(numero1);  // Define o valor de 'a'
+            calculadora.setA(numero1);  
 
             System.out.print("Digite o segundo número: ");
             int numero2 = scanner.nextInt();
-            calculadora.setB(numero2);  // Define o valor d7e 'b'
+            calculadora.setB(numero2);  
 
             System.out.print("Digite a operação (+, -, *, /): ");
             String operacao = scanner.next();
             try {
-                calculadora.setOperador(operacao);  // Define o operador
+                calculadora.setOperador(operacao);  
             } catch (Exception e) {
-                System.out.println(e.getMessage());  // Trata exceção, se ocorrer
-                return;  // Encerra o programa em caso de erro
+                System.out.println(e.getMessage());  
+                return;  
             }
 
-            int resultado = calculadora.operar();  // Realiza a operação
-            System.out.println("Resultado: " + resultado);  // Exibe o resultado
+            int resultado = calculadora.operar();  
+            System.out.println("Resultado: " + resultado);  
         }
     }
 }
